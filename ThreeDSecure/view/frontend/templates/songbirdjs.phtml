@@ -1,0 +1,25 @@
+<?php
+
+/* @var $block \CyberSource\ThreeDSecure\Block\SongbirdJs */
+
+?>
+<script type="text/javascript">
+
+    require.config({
+        paths: {
+            songbird: '<?php echo $block->isSandbox()
+                ?
+                'https://songbirdstag.cardinalcommerce.com/edge/v1/songbird'
+                :
+                'https://songbird.cardinalcommerce.com/edge/v1/songbird'; ?>'
+        },
+        shim: {
+            songbird: {
+                exports: 'Cardinal'
+            }
+        }
+
+    });
+
+</script>
+

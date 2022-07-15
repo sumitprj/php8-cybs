@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block class="CyberSource\VisaCheckout\Block\Js" name="visasdk-requirejs-config" template="CyberSource_VisaCheckout::visasdk.phtml" ifconfig="payment/chcybersourcevisa/active"/>
+        </referenceContainer>
+    </body>
+</page>

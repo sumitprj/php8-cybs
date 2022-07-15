@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2019 CyberSource. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="cybersource_section">
+                <group id="cybersource_secure_acceptance">
+                    <group id="cybersource_3ds" translate="label" type="text" sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Payer Authentication</label>
+                        <depends><field id="sa_flow_mode">1</field></depends>
+                        <comment>NOTE: Payer Authentication Cardinal Commerce SDK works through the SOAP Toolkit Flow Only!</comment>
+                        <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Enabled</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/chcybersource/active_3ds</config_path>
+                        </field>
+                        <field id="org_unit_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Org Unit ID</label>
+                            <config_path>payment/chcybersource/org_unit_id_3ds</config_path>
+                            <depends><field id="active">1</field></depends>
+                            <comment>Contact Cybersource Customer Support to obtain this</comment>
+                        </field>
+                        <field id="api_id" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>API ID</label>
+                            <config_path>payment/chcybersource/api_id_3ds</config_path>
+                            <depends><field id="active">1</field></depends>
+                            <comment>Contact Cybersource Customer Support to obtain this</comment>
+                        </field>
+                        <field id="api_key" translate="label" type="obscure" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>API Key</label>
+                            <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                            <config_path>payment/chcybersource/api_key_3ds</config_path>
+                            <depends><field id="active">1</field></depends>
+                            <comment>Contact Cybersource Customer Support to obtain this</comment>
+                        </field>
+                        <field id="enabled_card_types" translate="label" type="multiselect" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Card Types</label>
+                            <source_model>CyberSource\Core\Model\Source\Cctype</source_model>
+                            <config_path>payment/chcybersource/card_types_3ds</config_path>
+                            <comment>Select cards for 3D Secure validation</comment>
+                        </field>
+                    </group>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

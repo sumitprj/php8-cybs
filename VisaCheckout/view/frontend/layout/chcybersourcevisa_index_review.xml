@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 CyberSource. All rights reserved.
+ * See accompanying LICENSE.txt for applicable terms of use and license.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_onepage_review_item_renderers"/>
+    <body>
+        <referenceContainer name="content">
+            <block name="visacheckout.review" class="CyberSource\VisaCheckout\Block\Review" template="CyberSource_VisaCheckout::review.phtml">
+
+                <container name="visacheckout.additional.actions">
+                    <block class="Magento\Checkout\Block\Cart\Coupon" name="visacheckout.cart.coupon" as="coupon" template="Magento_Checkout::cart/coupon.phtml"/>
+                </container>
+
+                <block class="Magento\Checkout\Block\Cart\Totals" name="visacheckout.review.details" as="details" template="Magento_Paypal::express/review/details.phtml">
+                    <block class="Magento\Framework\View\Element\RendererList" name="checkout.onepage.review.item.renderers" as="renderer.list"/>
+                    <block class="Magento\Checkout\Block\Cart\Totals" name="visacheckout.review.details.totals" as="totals" template="Magento_Paypal::checkout/onepage/review/totals.phtml"/>
+                </block>
+
+                <block class="Magento\CheckoutAgreements\Block\Agreements" name="visacheckout.review.details.agreements" as="agreements" template="Magento_CheckoutAgreements::additional_agreements.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

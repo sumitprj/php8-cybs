@@ -1,0 +1,26 @@
+{
+    "name": "cybersource/global-payment-management",
+    "description": "Cybersource Global Payment Management",
+    "version": "3.5.1",
+    "type": "metapackage",
+    "require": {
+        "cybersource/module-3dsecure": "3.1.12",
+        "cybersource/module-account-updater": "3.1.5",
+        "cybersource/module-address": "3.1.6",
+        "cybersource/module-applepay": "3.1.7",
+        "cybersource/module-atp": "3.1.5",
+        "cybersource/module-bank-transfer": "3.2.1",
+        "cybersource/module-core": "3.5.1",
+        "cybersource/module-echeck": "3.1.7",
+        "cybersource/module-klarna": "3.3.1",
+        "cybersource/module-paypal": "3.1.9",
+        "cybersource/module-secure-acceptance": "3.5.2",
+        "cybersource/module-tax": "3.2.4",
+        "cybersource/module-visa-checkout": "3.1.6",
+        "cybersource/module-googlepay": "3.2.7",
+        "cybersource/module-wechatpay": "3.4.1"
+    },
+    "license": [
+        "proprietary"
+    ]
+}

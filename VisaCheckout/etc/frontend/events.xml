@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 CyberSource. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="shortcut_buttons_container">
+        <observer name="visacheckout_shortcuts" instance="CyberSource\VisaCheckout\Observer\AddVCShortcutsObserver"/>
+    </event>
+</config>

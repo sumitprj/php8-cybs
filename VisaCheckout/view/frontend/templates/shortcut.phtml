@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2018 CyberSource. All rights reserved.
+ * See accompanying LICENSE.txt for applicable terms of use and license.
+ */
+
+?>
+<?php
+/* @var $block \CyberSource\VisaCheckout\Block\Shortcut */
+
+$labelPosition = '';
+if ($block->isOrPositionBefore()) {
+    $labelPosition = ' before';
+} elseif ($block->isOrPositionAfter()) {
+    $labelPosition = ' after';
+}
+$shortcutHtmlId = $block->escapeHtml($block->getShortcutHtmlId());
+$isInCatalogProduct = false;
+if ($block->getIsInCatalogProduct()) {
+    $isInCatalogProduct = $block->getIsInCatalogProduct();
+}
+?>
+<div
+        data-label="<?php echo $block->escapeHtml(__('or')) ?>"
+        class="visacheckout checkout <?php echo $labelPosition ?> visacheckout-logo <?php echo $shortcutHtmlId ?>"
+        data-mage-init='{"CyberSource_VisaCheckout/js/view/payment/vc-checkout": <?php echo $block->getJsonConfig() ?>}'
+        <?php echo $isInCatalogProduct ? '' : 'style="text-align: center; margin-top: 15px;"' ?>
+>
+    <input type="image" data-action="checkout-form-submit"
+           src="<?php echo $block->escapeUrl($block->getImageUrl()) ?>"
+           alt="<?php echo $block->escapeHtml(__('Checkout with VisaCheckout')) ?>"
+           title="<?php echo $block->escapeHtml(__('Checkout with VisaCheckout')) ?>"
+           class="v-button"
+           />    
+</div>

@@ -1,0 +1,16 @@
+<?php
+
+/* @var $block \CyberSource\VisaCheckout\Block\Js */
+
+?>
+<script type="text/javascript">
+    require.config({
+        map: {
+            '*': {
+                visaSdk: '<?php echo $block->isSandbox()
+                    ? 'https://sandbox-assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js'
+                    : 'https://assets.secure.checkout.visa.com/checkout-widget/resources/js/integration/v1/sdk.js'; ?>'
+            }
+        }
+    });
+</script>
