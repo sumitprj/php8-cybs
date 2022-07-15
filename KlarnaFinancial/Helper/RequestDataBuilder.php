@@ -355,10 +355,17 @@ class RequestDataBuilder extends AbstractDataBuilder
         $address->postalCode = $quoteAddress->getPostcode();
         $address->district = $quoteAddress->getRegionCode();
         $address->state = $quoteAddress->getRegionCode();
-        $address->street1 = $quoteAddress->getStreetLine(1);
-        if (strlen(trim($quoteAddress->getStreetLine(2)))) {
+        
+        if($quoteAddress instanceof \Magento\Payment\Gateway\Data\AddressAdapterInterface)
+        {
+            $address->street1 = $quoteAddress->getStreetLine1();
+            $address->street2 = $quoteAddress->getStreetLine2();
+        }
+        else{
+            $address->street1 = $quoteAddress->getStreetLine(1);
             $address->street2 = $quoteAddress->getStreetLine(2);
         }
+
         $address->firstName = $quoteAddress->getFirstname();
         $address->lastName = $quoteAddress->getLastname();
         $address->language = str_replace("_", "-", $this->locale->getLocale());

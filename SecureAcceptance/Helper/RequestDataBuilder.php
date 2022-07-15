@@ -267,7 +267,7 @@ class RequestDataBuilder extends AbstractDataBuilder
         }
 
         $params[static::KEY_QUOTE_ID] = $quote->getId();
-        $customerEmail = (!empty(trim($guestEmail)) && $guestEmail != 'null') ? trim($guestEmail) : $quote->getCustomerEmail();
+        $customerEmail = (!empty(trim($guestEmail ?? '')) && $guestEmail != 'null') ? trim($guestEmail ?? '') : $quote->getCustomerEmail();
         $params = array_merge($params, $this->buildBillingAddress($billingAddress, $customerEmail, true));
         $params = array_merge($params, $this->buildShippingAddress($shippingAddress, $customerEmail, true, $quote->isVirtual()));
         $params = $this->buildDecisionManagerFieldsForSA($quote, $params);

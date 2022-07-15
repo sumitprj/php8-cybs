@@ -16,6 +16,6 @@ class TrimFilter implements FilterInterface
      */
     public function filter($input)
     {
-        return trim($input);
+        return trim($input ?? '');
     }
 }

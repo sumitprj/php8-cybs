@@ -41,7 +41,7 @@ class PaymentFailureRouteProvider implements PaymentFailureRouteProviderInterfac
     public function getFailureRoutePath()
     {
 
-        $overriddenRoute = trim($this->config->getOverrideErrorPageRoute());
+        $overriddenRoute = trim($this->config->getOverrideErrorPageRoute() ?? '');
 
         return $overriddenRoute ?: $this->defaultPaymentFailureRoute;
 
