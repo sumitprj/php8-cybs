@@ -148,27 +148,16 @@ abstract class AbstractRequest
         $address->lastName = $quoteAddress->getLastname();
         $address->phoneNumber = $quoteAddress->getTelephone();
 
-        $streetLine = $quoteAddress->getStreet();
-        $address->street1 = $streetLine[0];
-        $street2 = trim($streetLine[1] ?? '');
-        $street3 = trim($streetLine[2] ?? '');
-        if(strlen($street3)){
-
-        if (strlen($street2)) {
-
-            $street2 = $street2 . ' '. $street3;
+        if($quoteAddress instanceof \Magento\Payment\Gateway\Data\AddressAdapterInterface)
+        {
+            $address->street1 = $quoteAddress->getStreetLine1();
+            $address->street2 = $quoteAddress->getStreetLine2();
         }
-
-        else {
-
-            $street2 = $street3;
-        }  
-            
+        else{
+            $address->street1 = $quoteAddress->getStreetLine(1);
+            $address->street2 = $quoteAddress->getStreetLine(2);
         }
-            if (strlen($street2)) {
-                
-                $address->street2 = $street2;
-            }
+		
         if ($payment && $driversLicenseNnumber = $payment->getAdditionalInformation('drivers_license_number')
             && $driversLicenseState = $payment->getAdditionalInformation('drivers_license_state')) {
             $address->driversLicenseNumber = $driversLicenseNnumber;

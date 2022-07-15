@@ -326,27 +326,16 @@ class RequestDataBuilder extends AbstractDataBuilder
         $address->company = $quoteAddress->getCompany();
         $address->firstName = $quoteAddress->getFirstname();
         $address->lastName = $quoteAddress->getLastname();
-        $streetLine = $quoteAddress->getStreet();
-        $address->street1 = $streetLine[0];
-        $street2 = trim($streetLine[1] ?? '');
-        $street3 = trim($streetLine[2] ?? '');
-        if(strlen($street3)){
-
-            if (strlen($street2)) {
-
-                $street2 = $street2 . ' '. $street3;
-            }
-
-        else {
-
-            $street2 = $street3;
-        }  
-            
+		
+        if($quoteAddress instanceof \Magento\Payment\Gateway\Data\AddressAdapterInterface)
+        {
+            $address->street1 = $quoteAddress->getStreetLine1();
+            $address->street2 = $quoteAddress->getStreetLine2();
         }
-            if (strlen($street2)) {
-                
-                $address->street2 = $street2;
-            }
+        else{
+            $address->street1 = $quoteAddress->getStreetLine(1);
+            $address->street2 = $quoteAddress->getStreetLine(2);
+        }
 
         if ($quoteAddress->getAddressType() == \Magento\Quote\Model\Quote\Address::TYPE_BILLING) {
             $address->ipAddress = $this->_remoteAddress->getRemoteAddress();

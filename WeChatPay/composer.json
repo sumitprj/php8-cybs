@@ -2,14 +2,14 @@
     "name": "cybersource/module-wechatpay",
     "description": "WeChat Pay module for Magento",
     "require": {
-        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.1.3|~7.2.0|~7.3.0|~7.4.0|~8.0.0|~8.1.0",
+        "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.1.3|~7.2.0|~7.3.0|~7.4.0",
         "cybersource/module-core": ">=3.5.1"
     },
     "suggest": {
 
     },
     "type": "magento2-module",
-    "version": "3.4.1",
+    "version": "3.4.2",
     "license": [
         "proprietary"
     ],
