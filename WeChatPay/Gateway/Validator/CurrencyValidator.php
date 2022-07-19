@@ -43,6 +43,6 @@ class CurrencyValidator extends \Magento\Payment\Gateway\Validator\AbstractValid
      */
     private function getSupportedCurrencyList()
     {
-        return explode(',', $this->config->getValue('currency'));
+        return explode(',', $this->config->getValue('currency') ?? '');
     }
 }

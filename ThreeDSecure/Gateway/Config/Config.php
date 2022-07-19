@@ -46,6 +46,6 @@ class Config extends \CyberSource\Core\Model\AbstractGatewayConfig
 
     public function getEnabledCards($storeId = null)
     {
-        return explode(',', $this->getValue(self::KEY_ENABLED_CARDS, $storeId));
+        return explode(',', $this->getValue(self::KEY_ENABLED_CARDS, $storeId) ?? '');
     }
 }

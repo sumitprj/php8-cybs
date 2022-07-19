@@ -69,7 +69,7 @@ class CcTypeValidator extends \Magento\Payment\Gateway\Validator\AbstractValidat
 
         $allowedCcTypes = $this->config->getCcTypes();
 
-        $isValid = in_array($ccType, explode(',', $allowedCcTypes));
+        $isValid = in_array($ccType, explode(',', $allowedCcTypes ?? ''));
 
         return $this->createResult($isValid, ['Invalid card type.']);
     }

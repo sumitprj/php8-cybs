@@ -106,7 +106,7 @@ class Config extends \CyberSource\Core\Model\AbstractGatewayConfig
             return ['VI'];
         }
 
-        return explode(',', $configuredValue);
+        return explode(',', $configuredValue ?? '');
     }
 
     public function buttonShowInCart($storeId = null)

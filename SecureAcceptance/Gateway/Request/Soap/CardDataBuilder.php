@@ -43,7 +43,7 @@ class CardDataBuilder implements \Magento\Payment\Gateway\Request\BuilderInterfa
             return $result;
         }
 
-        list($expMonth, $expYear) = array_pad(explode('-', $expDate), 2, null);;
+        list($expMonth, $expYear) = array_pad(explode('-', $expDate ?? ''), 2, null);;
 
         if ($expMonth) {
             $result['card']['expirationMonth'] = $expMonth;

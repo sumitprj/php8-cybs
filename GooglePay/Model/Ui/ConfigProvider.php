@@ -112,7 +112,7 @@ class ConfigProvider implements ConfigProviderInterface
     private function getAllowedCountries()
     {
         return $this->config->getAllowspecific() === '1'
-            ? explode(',', $this->config->getSpecificcountry())
+            ? explode(',', $this->config->getSpecificcountry() ?? '')
             : array_values($this->allowedCountryModel->getAllowedCountries());
     }
 

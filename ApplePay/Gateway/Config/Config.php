@@ -76,7 +76,7 @@ class Config extends AbstractGatewayConfig
      */
     public function getCcTypes()
     {
-        return explode(',', parent::getCcTypes());
+        return explode(',', parent::getCcTypes() ?? '');
     }
 
     /**

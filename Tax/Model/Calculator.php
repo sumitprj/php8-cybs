@@ -274,7 +274,7 @@ class Calculator
         $isEnabled = $this->config->isTaxEnabled();
         $isCountryApplicable = in_array(
             $countryId,
-            explode(',', $this->config->getTaxCountries())
+            explode(',', $this->config->getTaxCountries() ?? '')
         );
 
         return ($isEnabled && $isCountryApplicable);
@@ -333,7 +333,7 @@ class Calculator
     {
         $isTaxClassExcluded = in_array(
             $customerTaxClassId,
-            explode(',', $this->config->getCustomerTaxClassExclude())
+            explode(',', $this->config->getCustomerTaxClassExclude() ?? '')
         );
 
         return !$isTaxClassExcluded;

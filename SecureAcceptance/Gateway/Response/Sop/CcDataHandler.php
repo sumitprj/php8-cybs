@@ -51,7 +51,7 @@ class CcDataHandler implements \Magento\Payment\Gateway\Response\HandlerInterfac
         $payment->setCcType($this->requestDataBuilder->getCardType($response['req_card_type'], true));
         $payment->setCcLast4(substr($maskedPan, -4));
 
-        list($expMonth, $expYear) = explode('-', $response['req_card_expiry_date']);
+        list($expMonth, $expYear) = explode('-', $response['req_card_expiry_date'] ?? '');
 
         $payment->setCcExpMonth($expMonth);
         $payment->setCcExpYear($expYear);

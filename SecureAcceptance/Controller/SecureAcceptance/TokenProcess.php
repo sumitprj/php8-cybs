@@ -127,7 +127,7 @@ class TokenProcess extends \Magento\Framework\App\Action\Action
                 'extension_attributes' => [
                     'agreement_ids' => explode(
                         ',',
-                        $this->getRequest()->getParam('req_' . RequestDataBuilder::KEY_AGREEMENT_IDS)
+                        $this->getRequest()->getParam('req_' . RequestDataBuilder::KEY_AGREEMENT_IDS) ?? ''
                     ),
                 ],
             ];

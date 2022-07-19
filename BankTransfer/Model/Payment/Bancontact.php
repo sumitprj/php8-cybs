@@ -130,7 +130,7 @@ class Bancontact extends \Magento\Payment\Model\Method\AbstractMethod
             explode(',', $this->_scopeConfig->getValue(
                 "payment/cybersource_bank_transfer/bancontact_currency",
                 \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-            ))
+            ) ?? '')
         ));
     }
 }

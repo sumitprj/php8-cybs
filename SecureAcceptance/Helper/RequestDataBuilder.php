@@ -725,7 +725,7 @@ class RequestDataBuilder extends AbstractDataBuilder
      */
     public function getUnsignedFields($params)
     {
-        $signedFieldNames = explode(",", $params["signed_field_names"]);
+        $signedFieldNames = explode(",", $params["signed_field_names"] ?? '');
         $unsignedFieldNames = [];
         foreach ($params as $key => $field) {
             if (!in_array($key, $signedFieldNames)) {
@@ -855,7 +855,7 @@ class RequestDataBuilder extends AbstractDataBuilder
 
         $card = new \stdClass();
         $card->accountNumber = $cardNumber;
-        $expireDate = explode("-", $cardExpiryDate);
+        $expireDate = explode("-", $cardExpiryDate ?? '');
         $card->expirationMonth = $expireDate[1];
         $card->expirationYear = $expireDate[0];
         $card->cardType = $cardType;

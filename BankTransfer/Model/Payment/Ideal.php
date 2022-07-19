@@ -115,7 +115,7 @@ class Ideal extends \Magento\Payment\Model\Method\AbstractMethod
             explode(',', $this->_scopeConfig->getValue(
                 "payment/cybersource_bank_transfer/ideal_currency",
                 \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-            ))
+            ) ?? '')
         ));
     }
 }

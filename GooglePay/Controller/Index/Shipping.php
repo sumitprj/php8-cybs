@@ -68,7 +68,7 @@ class Shipping extends \Magento\Framework\App\Action\Action
 
             if ($shippingMethodData = $this->getRequest()->getParam('shippingMethod', 'shipping_option_unselected')) {
                 if ($shippingMethodData != 'shipping_option_unselected') {
-                    list($shippingCarrier, $shippingMethod) = explode('_', $shippingMethodData);
+                    list($shippingCarrier, $shippingMethod) = explode('_', $shippingMethodData ?? '');
                     $this->updateShippingMethod($quote, $shippingCarrier, $shippingMethod);
                 }
             }

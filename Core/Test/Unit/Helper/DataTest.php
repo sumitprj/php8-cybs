@@ -142,7 +142,7 @@ class DataTest extends \PHPUnit\Framework\TestCase
         $data = $this->dataHelper->buildDataToSign($params);
 
         $this->assertInternalType("string", $data);
-        $this->assertCount(3, explode(",", $data));
+        $this->assertCount(3, explode(",", $data ?? ''));
         $this->assertEquals("test1=1,test2=2,test3=3", $data);
     }
 
@@ -386,9 +386,9 @@ class DataTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInternalType("string", $fields);
         $this->assertRegExp('/,/', $fields);
-        $this->assertArrayHasKey('tax_amount', array_flip(explode(",", $fields)));
-        $this->assertArrayHasKey('card_number', array_flip(explode(",", $fields)));
-        $this->assertArrayNotHasKey('bill_to_email', array_flip(explode(",", $fields)));
+        $this->assertArrayHasKey('tax_amount', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayHasKey('card_number', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayNotHasKey('bill_to_email', array_flip(explode(",", $fields ?? '')));
 
         $isToken = true;
         $isSilent = false;
@@ -398,9 +398,9 @@ class DataTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInternalType("string", $fields);
         $this->assertRegExp('/,/', $fields);
-        $this->assertArrayNotHasKey('tax_amount', array_flip(explode(",", $fields)));
-        $this->assertArrayNotHasKey('card_number', array_flip(explode(",", $fields)));
-        $this->assertArrayNotHasKey('bill_to_email', array_flip(explode(",", $fields)));
+        $this->assertArrayNotHasKey('tax_amount', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayNotHasKey('card_number', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayNotHasKey('bill_to_email', array_flip(explode(",", $fields ?? '')));
 
         $isToken = false;
         $isSilent = true;
@@ -410,10 +410,10 @@ class DataTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInternalType("string", $fields);
         $this->assertRegExp('/,/', $fields);
-        $this->assertArrayNotHasKey('tax_amount', array_flip(explode(",", $fields)));
-        $this->assertArrayNotHasKey('card_number', array_flip(explode(",", $fields)));
-        $this->assertArrayHasKey('bill_to_email', array_flip(explode(",", $fields)));
-        $this->assertArrayHasKey('payer_auth_enroll_service_run', array_flip(explode(",", $fields)));
+        $this->assertArrayNotHasKey('tax_amount', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayNotHasKey('card_number', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayHasKey('bill_to_email', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayHasKey('payer_auth_enroll_service_run', array_flip(explode(",", $fields ?? '')));
 
         $isToken = false;
         $isSilent = false;
@@ -423,10 +423,10 @@ class DataTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInternalType("string", $fields);
         $this->assertRegExp('/,/', $fields);
-        $this->assertArrayNotHasKey('tax_amount', array_flip(explode(",", $fields)));
-        $this->assertArrayNotHasKey('card_number', array_flip(explode(",", $fields)));
-        $this->assertArrayNotHasKey('payer_auth_enroll_service_run', array_flip(explode(",", $fields)));
-        $this->assertArrayHasKey('bill_to_email', array_flip(explode(",", $fields)));
+        $this->assertArrayNotHasKey('tax_amount', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayNotHasKey('card_number', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayNotHasKey('payer_auth_enroll_service_run', array_flip(explode(",", $fields ?? '')));
+        $this->assertArrayHasKey('bill_to_email', array_flip(explode(",", $fields ?? '')));
     }
 
     public function testGetUnsignedFields()

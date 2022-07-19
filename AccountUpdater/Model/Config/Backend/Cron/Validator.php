@@ -11,6 +11,6 @@ class Validator
     public function validate($expr)
     {
         // @TODO: add more strict validation of cron expr
-        return count(explode(' ', $expr)) === 5;
+        return count(explode(' ', $expr ?? '')) === 5;
     }
 }

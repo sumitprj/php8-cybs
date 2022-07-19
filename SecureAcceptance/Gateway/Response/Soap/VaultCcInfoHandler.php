@@ -92,7 +92,7 @@ class VaultCcInfoHandler implements \Magento\Payment\Gateway\Response\HandlerInt
         }
 
         if (!empty($details['expirationDate'])) {
-            list($expMonth, $expYear) = explode('/', $details['expirationDate']);
+            list($expMonth, $expYear) = explode('/', $details['expirationDate'] ?? '');
             $payment->setCcExpYear($expYear);
             $payment->setCcExpMonth($expMonth);
         }

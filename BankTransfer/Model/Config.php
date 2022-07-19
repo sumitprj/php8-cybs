@@ -59,7 +59,7 @@ class Config extends AbstractGatewayConfig
 
     public function getMethodAvailableCurrencies($method)
     {
-        return explode(',', $this->getValue($method.'_currency'));
+        return explode(',', $this->getValue($method.'_currency') ?? '');
     }
     
     public function getCode()

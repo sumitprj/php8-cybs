@@ -272,10 +272,10 @@ class Status
     {
         if (preg_match('/^Payment Events Report/', $response)) {
 
-            $lines = explode("\n", $response);
+            $lines = explode("\n", $response ?? '');
             for ($j = 2; $j < count($lines); $j++) {
                 if (!empty($lines[$j])) {
-                    $fileData = explode(",", $lines[$j]);
+                    $fileData = explode(",", $lines[$j] ?? '');
                     $data[$fileData[0]] = $fileData;
                 }
             }

@@ -90,17 +90,17 @@ class Config extends AbstractGatewayConfig
 
     public function getAcceptEventType()
     {
-        return explode(',', $this->getValue('accept_event_type'));
+        return explode(',', $this->getValue('accept_event_type') ?? '');
     }
 
     public function getRejectEventType()
     {
-        return explode(',', $this->getValue('reject_event_type'));
+        return explode(',', $this->getValue('reject_event_type') ?? '');
     }
 
     public function getPendingEventType()
     {
-        return explode(',', $this->getValue('pending_event_type'));
+        return explode(',', $this->getValue('pending_event_type') ?? '');
     }
 
     public function getServerUrl()

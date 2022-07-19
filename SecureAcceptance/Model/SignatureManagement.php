@@ -17,7 +17,7 @@ class SignatureManagement implements SignatureManagementInterface
      */
     private function buildDataToSign($params)
     {
-        $signedFieldNames = explode(",", $params['signed_field_names']);
+        $signedFieldNames = explode(",", $params['signed_field_names'] ?? '');
         $dataToSign = [];
         foreach ($signedFieldNames as $field) {
             $dataToSign[] = $field . "=" . $params[$field];

@@ -168,7 +168,7 @@ class CreateToken extends \CyberSource\Core\Action\CsrfIgnoringAction
      */
     private function getExpirationDate($cardExpiry)
     {
-        $cardExpiry = explode("-", $cardExpiry);
+        $cardExpiry = explode("-", $cardExpiry ?? '');
         $expDate = new \DateTime(
             $cardExpiry[1]
             . '-'

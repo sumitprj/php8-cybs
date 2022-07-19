@@ -126,7 +126,7 @@ class TokenProcessTest extends TestCase
                 'extension_attributes' => [
                     'agreement_ids' => explode(
                         ',',
-                        $paramValue
+                        $paramValue ?? ''
                     ),
                 ]
             ]
@@ -280,7 +280,7 @@ class TokenProcessTest extends TestCase
                 'extension_attributes' => [
                     'agreement_ids' => explode(
                         ',',
-                        $paramValue
+                        $paramValue ?? ''
                     ),
                 ]
             ]
