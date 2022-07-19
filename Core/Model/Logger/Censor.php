@@ -114,6 +114,6 @@ class Censor
      */
     private function censorString($value)
     {
-        return (string) preg_replace($this->PANRegExps, self::CENSOR_MASK_PAN, $value);
+        return (string) preg_replace($this->PANRegExps, self::CENSOR_MASK_PAN, $value ?? '');
     }
 }

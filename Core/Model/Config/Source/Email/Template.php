@@ -52,7 +52,7 @@ class Template extends \Magento\Framework\DataObject implements \Magento\Framewo
         }
         $options = $collection->toOptionArray();
         $templateId = str_replace('/', '_', $this->getPath());
-        $templateId = preg_replace("/payment_([A-Za-z][A-Za-z]|other)_/", "payment_", $templateId);
+        $templateId = preg_replace("/payment_([A-Za-z][A-Za-z]|other)_/", "payment_", $templateId ?? '');
         $templateLabel = $this->_emailConfig->getTemplateLabel($templateId);
         $templateLabel = __('%1 (Default)', $templateLabel);
         array_unshift($options, ['value' => $templateId, 'label' => $templateLabel]);

@@ -13,6 +13,6 @@ class AlphaNumFilter implements FilterInterface
 
     public function filter($input)
     {
-        return preg_replace("/[^[:alnum:][:space:]]/u", '', $input);
+        return preg_replace("/[^[:alnum:][:space:]]/u", '', $input ?? '');
     }
 }
