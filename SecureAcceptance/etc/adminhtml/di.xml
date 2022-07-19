@@ -192,11 +192,11 @@
         </arguments>
     </type>
 
-    <virtualType name="CyberSourceSecureAcceptancePaymentTokenRepositoryPlugin" type="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin">
+    <type name="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin">
         <arguments>
             <argument name="checkoutSession" xsi:type="object">Magento\Backend\Model\Session\Quote\Proxy</argument>
         </arguments>
-    </virtualType>
+    </type>
 
     <type name="CyberSource\SecureAcceptance\Gateway\Response\Soap\CleanSessionHandler">
         <arguments>
@@ -206,7 +206,7 @@
 
     <type name="Magento\Vault\Api\PaymentTokenRepositoryInterface">
         <plugin name="dummy-sa-payment-token-repository-plugin" type="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin" />
-        <plugin name="cybersource-sa-payment-token-repository-plugin" type="CyberSourceSecureAcceptancePaymentTokenRepositoryPlugin" />
+        <plugin name="cybersource-sa-payment-token-repository-plugin" type="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin" />
     </type>
 
     <type name="Magento\Store\Api\StoreResolverInterface">

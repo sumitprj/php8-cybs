@@ -96,7 +96,7 @@
 
     <type name="Magento\Vault\Api\PaymentTokenRepositoryInterface">
         <plugin name="dummy-sa-payment-token-repository-plugin" type="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin" />
-        <plugin name="cybersource-sa-payment-token-repository-plugin" type="CyberSourceSecureAcceptancePaymentTokenRepositoryPlugin" />
+        <plugin name="cybersource-sa-payment-token-repository-plugin" type="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin" />
     </type>
 
 </config>

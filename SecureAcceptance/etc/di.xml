@@ -860,14 +860,14 @@
         </arguments>
     </virtualType>
 
-    <virtualType name="CyberSourceSecureAcceptancePaymentTokenRepositoryPlugin" type="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin">
+    <type name="CyberSource\Core\Plugin\PaymentTokenRepositoryPlugin">
         <arguments>
             <argument name="checkoutSession" xsi:type="object">Magento\Checkout\Model\Session\Proxy</argument>
             <argument name="config" xsi:type="object">CyberSource\SecureAcceptance\Gateway\Config\Config</argument>
             <argument name="configKey" xsi:type="const">CyberSource\SecureAcceptance\Gateway\Config\Config::KEY_MERCHANT_ID</argument>
             <argument name="methodCode" xsi:type="const">CyberSource\SecureAcceptance\Model\Ui\ConfigProvider::CODE</argument>
         </arguments>
-    </virtualType>
+    </type>
 
     <type name="Magento\Store\Api\StoreResolverInterface">
         <plugin sortOrder="1" name="cyberSourceSecureAcceptanceStoreResolverInterface" type="CyberSource\SecureAcceptance\Plugin\Store\Api\StoreResolverInterfacePlugin"/>
