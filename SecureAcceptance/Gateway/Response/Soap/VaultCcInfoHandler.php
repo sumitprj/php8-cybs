@@ -80,7 +80,7 @@ class VaultCcInfoHandler implements \Magento\Payment\Gateway\Response\HandlerInt
 
         if (!empty($details['maskedCC'])) {
 
-            $maskedPan = str_replace('-', '', $details['maskedCC']);
+            $maskedPan = str_replace('-', '', $details['maskedCC']) ?? '';
 
             $payment->setAdditionalInformation(
                 'cardNumber',
