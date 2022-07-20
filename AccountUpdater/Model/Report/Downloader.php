@@ -78,7 +78,7 @@ class Downloader implements DownloaderInterface
             $this->getReportUrl($reportDate)
         );
 
-        $reportContents = $this->curl->getBody();
+        $reportContents = $this->curl->getBody() ?? '';
 
         // quick check if we actually got valid au report file
         if (strpos($reportContents, 'H,cybs.au.response.ss') !== 0) {

@@ -102,7 +102,7 @@ class DownloaderSfs implements DownloaderInterface
             'fileId' => $auReportFileId,
         ])->get();
 
-        $reportContents = $fileGetResult['response'];
+        $reportContents = $fileGetResult['response'] ?? '';
 
         // quick check if we actually got valid au report file
         if (strpos($reportContents, 'H,cybs.au.response.ss') !== 0) {

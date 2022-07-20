@@ -36,7 +36,7 @@ class SaleServiceBuilder implements \Magento\Payment\Gateway\Request\BuilderInte
      */
     public function build(array $buildSubject)
     {
-        $successUrl = $this->config->getWeChatSuccessUrl();
+        $successUrl = $this->config->getWeChatSuccessUrl() ?? '';
         $successUrl = strpos($successUrl, 'http') !== 0
             ? $this->storeManager->getStore()->getUrl($successUrl)
             : $successUrl;
