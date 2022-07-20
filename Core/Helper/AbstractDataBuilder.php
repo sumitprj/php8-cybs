@@ -130,7 +130,7 @@ abstract class AbstractDataBuilder extends AbstractHelper
             $amount = (float) $amount;
         }
 
-        return number_format($amount, 2, '.', '');
+        return sprintf('%.2F', $amount);
     }
 
     /**

@@ -88,7 +88,7 @@ class Request extends Action
             'merchantCapabilities' => ['supports3DS'],
             'total' => [
                 'label' => $storeInfo->getName() ? $storeInfo->getName() : 'Default Store Name',
-                'amount' => number_format($quote->getGrandTotal(), 2),
+                'amount' => sprintf('%.2F', $quote->getGrandTotal()),
             ]
         ]];
 
