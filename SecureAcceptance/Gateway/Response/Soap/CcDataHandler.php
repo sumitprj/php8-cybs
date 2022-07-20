@@ -52,7 +52,7 @@ class CcDataHandler implements \Magento\Payment\Gateway\Response\HandlerInterfac
         }
 
         $cardType = $response['card']->cardType ?? '';
-        $maskedPan = $payment->getAdditionalInformation('maskedPan');
+        $maskedPan = $payment->getAdditionalInformation('maskedPan') ?? '';
         $cardNumber = substr($maskedPan, 0, 6) . str_repeat('X', strlen($maskedPan) - 10) . substr($maskedPan, -4);
         $payment->setAdditionalInformation('cardNumber', $cardNumber);
         $payment->setAdditionalInformation('cardType', $cardType);

@@ -103,7 +103,7 @@ abstract class AbstractResponseHandler
         $payment->setAdditionalInformation(self::DECISION, $cyberSourceResponse[self::DECISION]);
         $payment->setAdditionalInformation(self::MERCHANT_REFERENCE_CODE, $cyberSourceResponse[self::MERCHANT_REFERENCE_CODE]);
 
-        $maskedPan = $cyberSourceResponse[self::CARD_NUMBER];
+        $maskedPan = $cyberSourceResponse[self::CARD_NUMBER] ?? '';
         $payment->setAdditionalInformation('cardNumber', substr($maskedPan, 0, 6) . str_repeat('x', strlen($maskedPan) - 10) . substr($maskedPan, -4));
         $payment->setCcLast4(substr($maskedPan, -4));
         $payment->setAdditionalInformation('cardType', $cyberSourceResponse['req_card_type']);
@@ -147,7 +147,7 @@ abstract class AbstractResponseHandler
         }
 
         $cardType = isset($cyberSourceResponse['req_card_type']) ? $cyberSourceResponse['req_card_type'] : '';
-        $cardNumber = $cyberSourceResponse['req_card_number'];
+        $cardNumber = $cyberSourceResponse['req_card_number'] ?? '';
         $ccLastFour = substr($cardNumber, -4);
         $cardExpiry = isset($cyberSourceResponse['req_card_expiry_date']) ? $cyberSourceResponse['req_card_expiry_date'] : '';
 

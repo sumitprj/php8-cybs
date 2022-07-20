@@ -34,6 +34,6 @@ class MaxLengthFilter implements FilterInterface
      */
     public function filter($input)
     {
-        return $this->stringUtils->substr($input, 0, $this->maxLength);
+        return $this->stringUtils->substr($input ?? '', 0, $this->maxLength);
     }
 }

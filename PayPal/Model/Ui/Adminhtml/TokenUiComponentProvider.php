@@ -52,7 +52,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
                     'title' => $this->config->getTitle(),
                     TokenUiComponentProviderInterface::COMPONENT_DETAILS => $jsonDetails,
                     TokenUiComponentProviderInterface::COMPONENT_PUBLIC_HASH => $paymentToken->getPublicHash(),
-                    'maskedToken' => '****' . substr($paymentToken->getGatewayToken(), -4),
+                    'maskedToken' => '****' . substr($paymentToken->getGatewayToken() ?? '', -4),
                     'template' => 'CyberSource_PayPal::vault/renderer.phtml'
 
                 ],

@@ -70,7 +70,10 @@ class TokenHandler implements \Magento\Payment\Gateway\Response\HandlerInterface
     private function buildTokenToSave($response)
     {
         $cardType = isset($response['req_card_type']) ? $response['req_card_type'] : '';
-        $cardNumber = $response['req_card_number'];
+        $cardNumber = $response['req_card_number']  ?? '';
+        if(empty($cardNumber)) {
+            throw new \Magento\Framework\Exception\LocalizedException(__('Card Number is empty in the Gateway response'));
+        }
         $ccLastFour = substr($cardNumber, -4);
         $cardExpiry = isset($response['req_card_expiry_date']) ? $response['req_card_expiry_date'] : '';
 

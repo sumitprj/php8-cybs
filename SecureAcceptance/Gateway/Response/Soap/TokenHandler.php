@@ -78,7 +78,7 @@ class TokenHandler implements \Magento\Payment\Gateway\Response\HandlerInterface
     {
 
         $cardType = $response['card']->cardType ?? '';
-        $cardNumber = $payment->getAdditionalInformation('maskedPan');
+        $cardNumber = $payment->getAdditionalInformation('maskedPan') ?? '';
         $ccLastFour = substr($cardNumber, -4);
         $cardExpiry = $payment->getAdditionalInformation(\CyberSource\SecureAcceptance\Observer\DataAssignObserver::KEY_EXP_DATE);
 

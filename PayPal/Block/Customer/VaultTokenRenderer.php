@@ -42,7 +42,7 @@ class VaultTokenRenderer extends AbstractTokenRenderer
      */
     public function getMaskedId()
     {
-        return '****' . substr($this->getToken()->getGatewayToken(), -4);
+        return '****' . substr($this->getToken()->getGatewayToken() ?? '', -4);
     }
 
     /**

@@ -159,8 +159,8 @@ class CyberSourcePayPalSoapAPI extends AbstractConnection
             if ($response !== null && 100 == $response->reasonCode) {
                 $result = [
                     'paypalToken' => substr(
-                        $response->apSessionsReply->merchantURL,
-                        strrpos($response->apSessionsReply->merchantURL, 'token=') + 6
+                        $response->apSessionsReply->merchantURL ?? '',
+                        strrpos($response->apSessionsReply->merchantURL ?? '', 'token=') + 6
                     ),
                     'merchantURL' => $response->apSessionsReply->merchantURL,
                     'requestID' => $response->requestID,

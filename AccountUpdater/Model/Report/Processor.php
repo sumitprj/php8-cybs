@@ -179,8 +179,8 @@ class Processor
         $formattedRowData['profileId'] = $row[2];
         $formattedRowData['responseCode'] = $row[4]; // NAN, NED, ACL etc
         $formattedRowData['reasonCode'] = $row[5]; // 800, 801, 802 etc
-        $formattedRowData['type'] = substr($row[3], 0, 1) == 4 ? 'VI' : 'MC';
-        $formattedRowData['maskedCC'] = '****-****-****-' . substr($row[3], -4);
+        $formattedRowData['type'] = substr($row[3] ?? '', 0, 1) == 4 ? 'VI' : 'MC';
+        $formattedRowData['maskedCC'] = '****-****-****-' . substr($row[3] ?? '', -4);
         $formattedRowData['expirationDate'] = $row[9] . '/20' . $row[10];
         $formattedRowData['newProfileId'] = isset($row[11]) ? $row[11] : false;
 

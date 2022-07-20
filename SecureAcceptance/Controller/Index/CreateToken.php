@@ -149,7 +149,7 @@ class CreateToken extends \CyberSource\Core\Action\CsrfIgnoringAction
                 'title' => $this->config->getVaultTitle(),
                 'incrementId' => $response['req_reference_number'],
                 'type' => $this->helper->getCardType($response['req_card_type'], true),
-                'maskedCC' => "****-****-****-" . substr($response['req_card_number'], -4),
+                'maskedCC' => "****-****-****-" . substr($response['req_card_number'] ?? '', -4),
                 'expirationDate' => str_replace("-", "/", $response['req_card_expiry_date']),
                 'merchantId' => $this->config->getMerchantId()
             ]));

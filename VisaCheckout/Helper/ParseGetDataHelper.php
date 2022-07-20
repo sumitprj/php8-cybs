@@ -140,7 +140,7 @@ class ParseGetDataHelper extends AbstractHelper
     {
         $payment->setAdditionalInformation(
             self::CARD_ACCOUNT_NUMBER,
-            self::CC_MASK . '-' . substr($responseDecrypted['card']->{self::CARD_ACCOUNT_NUMBER}, -4)
+            self::CC_MASK . '-' . substr($responseDecrypted['card']->{self::CARD_ACCOUNT_NUMBER} ?? '', -4)
         );
         $payment->setAdditionalInformation(self::CARD_EXP_MONTH, $responseDecrypted['card']->{self::CARD_EXP_MONTH});
         $payment->setAdditionalInformation(self::CARD_EXP_YEAR, $responseDecrypted['card']->{self::CARD_EXP_YEAR});
