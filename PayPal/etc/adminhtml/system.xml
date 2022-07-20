@@ -80,7 +80,10 @@
                             <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                             <config_path>payment/cybersourcepaypal/specificcountry</config_path>
                             <validate>required-entry</validate>
-                            <depends><field id="active">1</field></depends>
+                            <depends>
+                                <field id="active">1</field>
+                                <field id="allowspecific">1</field>
+                            </depends>
                         </field>
                         <field id="ba_active" translate="label comment" type="select" sortOrder="27" showInDefault="1" showInWebsite="1">
                             <label>Enable PayPal Billing Agreements</label>

@@ -78,7 +78,10 @@
                                 <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                                 <config_path>payment/cybersource_bank_transfer_ideal/specificcountry</config_path>
                                 <validate>required-entry</validate>
-                                <depends><field id="bank_transfer_ideal_active">1</field></depends>
+                                <depends>
+                                    <field id="bank_transfer_ideal_active">1</field>
+                                    <field id="allowspecific">1</field>
+                                </depends>
                             </field>
                         </group>
                         <group id="cybersource_bank_transfer_sofort" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -141,7 +144,11 @@
                                 <label>Payment from Specific Countries</label>
                                 <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                                 <config_path>payment/cybersource_bank_transfer_sofort/specificcountry</config_path>
-                                <depends><field id="bank_transfer_sofort_active">1</field></depends>
+                                <validate>required-entry</validate>
+                                <depends>
+                                    <field id="bank_transfer_sofort_active">1</field>
+                                    <field id="allowspecific">1</field>
+                                </depends>
                             </field>
                         </group>
                         <group id="cybersource_bank_transfer_bancontact" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -205,7 +212,11 @@
                                 <label>Payment from Specific Countries</label>
                                 <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                                 <config_path>payment/cybersource_bank_transfer_bancontact/specificcountry</config_path>
-                                <depends><field id="bank_transfer_bancontact_active">1</field></depends>
+                                <validate>required-entry</validate>
+                                <depends>
+                                    <field id="bank_transfer_bancontact_active">1</field>
+                                    <field id="allowspecific">1</field>
+                                </depends>
                             </field>
                         </group>
                     </group>

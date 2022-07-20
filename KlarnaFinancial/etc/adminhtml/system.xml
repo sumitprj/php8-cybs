@@ -71,7 +71,10 @@
                             <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                             <config_path>payment/cybersourceklarna/specificcountry</config_path>
                             <validate>required-entry</validate>
-                            <depends><field id="active">1</field></depends>
+                            <depends>
+                                <field id="active">1</field>
+                                <field id="allowspecific">1</field>
+                            </depends>
                         </field>
                     </group>
                 </group>
