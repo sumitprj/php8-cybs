@@ -63,6 +63,7 @@
                            showInWebsite="1" showInStore="0">
                         <label>Payment From Specific Countries</label>
                         <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                        <validate>required-entry</validate>
 						<config_path>payment/cybersourceecheck/specificcountry</config_path>
                     </field>
                     <field id="report_check_period" translate="label" type="text" sortOrder="145" showInDefault="1" showInWebsite="0" showInStore="1">

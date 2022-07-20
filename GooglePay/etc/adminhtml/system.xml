@@ -55,6 +55,7 @@
                         <label>Payment From Specific Countries</label>
                         <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                         <config_path>payment/cybersource_googlepay/specificcountry</config_path>
+                        <validate>required-entry</validate>
                         <depends><field id="active">1</field></depends>
                     </field>
                     <field id="button_pdp_is_visible" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">

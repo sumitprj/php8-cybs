@@ -80,7 +80,8 @@
                             <label>Payment From Specific Countries</label>
                             <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                             <config_path>payment/cybersourcewechatpay/specificcountry</config_path>
-                             <depends><field id="active">1</field></depends>
+                            <validate>required-entry</validate>
+                            <depends><field id="active">1</field></depends>
                         </field>
                         <field id="popup_message_delay" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="0">
                             <label>Success/Failure Message Delay</label>
