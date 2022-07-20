@@ -53,7 +53,7 @@ class Downloader implements DownloaderInterface
      * @return string
      * @throws \Exception
      */
-    public function download($reportDate = null)
+    public function download($reportDate = '')
     {
         $varDir = $this->filesystem->getDirectoryWrite(DirectoryList::VAR_DIR);
 
@@ -64,7 +64,7 @@ class Downloader implements DownloaderInterface
 
         $varDir->create('au');
 
-        $reportDate = $reportDate ? date('Y-m-d', strtotime($reportDate)) : date('Y-m-d');
+        $reportDate = $reportDate ? date('Y-m-d', strtotime($reportDate ?? '')) : date('Y-m-d');
         $reportPath = $varDir->getAbsolutePath("au/{$reportDate}-report.csv");
 
         $this->curl->setCredentials(
@@ -105,7 +105,7 @@ class Downloader implements DownloaderInterface
         $endpointUrl = $this->config->getEndpointUrl();
         $merchantId = $this->config->getMerchantId();
 
-        $reportDate = $reportDate ? date('Y/m/d', strtotime($reportDate)) : date('Y/m/d');
+        $reportDate = $reportDate ? date('Y/m/d', strtotime($reportDate ?? '')) : date('Y/m/d');
         $reportName = "{$merchantId}.au.response.ss.csv";
 
         return "{$endpointUrl}/{$reportDate}/{$merchantId}/{$reportName}";

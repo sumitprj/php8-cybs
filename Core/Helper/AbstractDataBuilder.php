@@ -192,7 +192,7 @@ abstract class AbstractDataBuilder extends AbstractHelper
                 $merchantDefinedData->field4 = $lastOrder->getData('created_at'); // Last Order Date
             }
 
-            $merchantDefinedData->field5 = round((time() - strtotime($this->customerSession->getCustomerData()->getCreatedAt())) / (3600 * 24));// Member Account Age (Days)
+            $merchantDefinedData->field5 = round((time() - strtotime($this->customerSession->getCustomerData()->getCreatedAt() ?? '')) / (3600 * 24));// Member Account Age (Days)
         }
 
         $orders = $this->orderGridCollectionFactory->create()

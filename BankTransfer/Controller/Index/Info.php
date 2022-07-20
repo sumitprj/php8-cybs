@@ -119,7 +119,7 @@ class Info extends \Magento\Framework\App\Action\Action
         $needUpdate = false;
         $data = [];
         foreach ($this->idealOption->getCollection() as $option) {
-            if (time() - strtotime($option->getData('created_date')) > 24*3600) {
+            if (time() - strtotime($option->getData('created_date') ?? '') > 24*3600) {
                 $needUpdate = true;
                 break;
             }

@@ -155,7 +155,7 @@ class Config extends AbstractGatewayConfig
         }
         return sprintf(
             'https://www.paypal.com/%s/cgi-bin/webscr?cmd=xpt/Marketing/popup/OLCWhatIsPayPal-outside',
-            strtolower($countryCode)
+            strtolower($countryCode ?? '')
         );
     }
 

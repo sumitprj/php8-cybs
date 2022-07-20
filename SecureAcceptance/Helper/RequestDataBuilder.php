@@ -162,7 +162,7 @@ class RequestDataBuilder extends AbstractDataBuilder
         );
         $this->resolver = $resolver;
         $this->gatewayConfig = $gatewayConfig;
-        $this->locale = str_replace('_', '-', strtolower($this->resolver->getLocale()));
+        $this->locale = str_replace('_', '-', strtolower($this->resolver->getLocale() ?? ''));
         $this->customerModel = $customerModel;
         $this->urlBuilder = $context->getUrlBuilder();
         $this->orderRepository = $orderRepository;
@@ -434,7 +434,7 @@ class RequestDataBuilder extends AbstractDataBuilder
                 $data['merchant_defined_data4'] = $lastOrder->getData('created_at'); // Last Order Date
             }
 
-            $data['merchant_defined_data5'] = round((time() - strtotime($customer->getData('created_at'))) / (3600 * 24));// Member Account Age (Days)
+            $data['merchant_defined_data5'] = round((time() - strtotime($customer->getData('created_at') ?? '')) / (3600 * 24));// Member Account Age (Days)
         }
 
         $orders = $this->orderGridCollectionFactory->create()
@@ -1098,7 +1098,7 @@ class RequestDataBuilder extends AbstractDataBuilder
 
     public function getLocale()
     {
-        return str_replace('_', '-', strtolower($this->locale));
+        return str_replace('_', '-', strtolower($this->locale ?? ''));
     }
 
     public function getCartItemsDiscount()

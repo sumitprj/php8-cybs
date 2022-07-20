@@ -34,7 +34,7 @@ class VaultTokenRenderer extends AbstractTokenRenderer
      */
     public function getDate()
     {
-        return date('Y-m-d', strtotime($this->getTokenDetails()['date']));
+        return date('Y-m-d', strtotime($this->getTokenDetails()['date'] ?? ''));
     }
 
     /**

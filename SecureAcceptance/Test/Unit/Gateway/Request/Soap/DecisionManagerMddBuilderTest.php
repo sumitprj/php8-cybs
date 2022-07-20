@@ -158,7 +158,7 @@ class DecisionManagerMddBuilderTest extends TestCase
                 'field2' => $createdAt,
                 'field3' => $collectionSize,
                 'field4' => $createdAt2,
-                'field5' => round((time() - strtotime($createdAt)) / (3600 * 24)),
+                'field5' => round((time() - strtotime($createdAt ?? '')) / (3600 * 24)),
                 'field6' => 1,
                 'field20' => $couponCode,
                 'field21' => $baseSubtotal - $baseSubtotalWithDiscount,

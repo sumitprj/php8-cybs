@@ -164,7 +164,7 @@ class DecisionManagerMddBuilderTest extends TestCase
                 ],
                 [
                     'key' => '5',
-                    'value' => round((time() - strtotime($createdAt)) / (3600 * 24)),
+                    'value' => round((time() - strtotime($createdAt ?? '')) / (3600 * 24)),
                 ],
                 [
                     'key' => '6',

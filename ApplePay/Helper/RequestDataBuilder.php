@@ -122,7 +122,7 @@ class RequestDataBuilder extends AbstractDataBuilder
         $applePaymentMethod = $payment->getAdditionalInformation("applePaymentMethod");
 
         $card = new \stdClass();
-        $card->cardType = $this->applePaymentMethodCard[strtolower($applePaymentMethod['network'])];
+        $card->cardType = $this->applePaymentMethodCard[strtolower($applePaymentMethod['network'] ?? '')];
 
         $request->card = $card;
 

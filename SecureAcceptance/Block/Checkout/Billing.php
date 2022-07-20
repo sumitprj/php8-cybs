@@ -65,7 +65,7 @@ class Billing extends \Magento\Multishipping\Block\Checkout\Billing
                 $data[] = [
                     'public_hash' => $paymentToken->getPublicHash(),
                     'title' => $tokenDetails->maskedCC,
-                    'card_type' => strtolower($tokenDetails->type),
+                    'card_type' => strtolower($tokenDetails->type ?? ''),
                     'expiry_date' => $tokenDetails->expirationDate
                 ];
             }

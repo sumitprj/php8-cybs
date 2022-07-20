@@ -56,7 +56,7 @@ class RequestSigner
         $signatureValueArray = [
             'host: ' . $host,
             'date: ' . $date,
-            '(request-target): ' . strtolower($method) . ' ' . $requestPath
+            '(request-target): ' . strtolower($method ?? '') . ' ' . $requestPath
         ];
 
         if ($this->isPayloadExpected($method)) {

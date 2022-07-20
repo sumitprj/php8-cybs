@@ -190,7 +190,7 @@ class DecisionManagerMddBuilder implements \Magento\Payment\Gateway\Request\Buil
 
     private function getAccountAge()
     {
-        return round((time() - strtotime($this->customerSession->getCustomerData()->getCreatedAt())) / (3600 * 24));
+        return round((time() - strtotime($this->customerSession->getCustomerData()->getCreatedAt() ?? '')) / (3600 * 24));
     }
 
     private function getGiftMessage($buildSubject)

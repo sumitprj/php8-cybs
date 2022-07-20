@@ -27,7 +27,7 @@ class DmeResultPropagationManager
     public function propagate(DmeValidationResult $result)
     {
         $type = $result->getType();
-        $decision = $result->getDecision();
+        $decision = $result->getDecision() ?? '';
         $eventData = $result->getEventData();
 
         $eventData = array_merge($eventData, ['type' => $type, 'decision' => $decision]);

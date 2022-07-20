@@ -42,7 +42,7 @@ class Converter implements ConverterInterface
 		if($this->productMetadata->getVersion() >= '2.4.4'){
 
 			$exponent = new \phpseclib3\Math\BigInteger(base64_decode($jwkArray['e']), 256);
-			$modulus  = new \phpseclib3\Math\BigInteger(base64_decode(strtr($jwkArray['n'], '-_', '+/'), true), 256);
+			$modulus  = new \phpseclib3\Math\BigInteger(base64_decode(strtr($jwkArray['n'] ?? '', '-_', '+/'), true), 256);
 			$publicKey = \phpseclib3\Crypt\PublicKeyLoader::loadPublicKey(['e' => $exponent, 'n' => $modulus]);
 			
 			return $publicKey->toString('PKCS8');
@@ -62,7 +62,7 @@ class Converter implements ConverterInterface
 			]);
 
 			$modulus = $bigIntegerFactory->create([
-				'x' => base64_decode(strtr($jwkArray['n'], '-_', '+/'), true),
+				'x' => base64_decode(strtr($jwkArray['n'] ?? '', '-_', '+/'), true),
 				'base' => 256,
 			]);
 

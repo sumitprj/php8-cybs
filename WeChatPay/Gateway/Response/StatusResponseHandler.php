@@ -46,7 +46,7 @@ class StatusResponseHandler implements \Magento\Payment\Gateway\Response\Handler
         /** @var \Magento\Sales\Model\Order\Payment $payment */
         $payment->setTransactionId($payment->getLastTransId());
 
-        $normalizedStatus = strtolower($apStatus);
+        $normalizedStatus = strtolower($apStatus ?? '');
 
         $payment->setAdditionalInformation('wcpStatus', $normalizedStatus);
 
