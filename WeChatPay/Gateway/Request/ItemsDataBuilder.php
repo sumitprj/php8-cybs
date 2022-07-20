@@ -120,6 +120,6 @@ class ItemsDataBuilder implements \Magento\Payment\Gateway\Request\BuilderInterf
     }
     protected function formatAmount($amount)
     {
-        return number_format($amount, 2, '.', '');
+        return sprintf('%.2F', $amount);
     }
 }

@@ -85,7 +85,7 @@ class Request extends \Magento\Framework\App\Action\Action
                 'request' => [
                     'total' => [
                         'currencyCode' => $quote->getCurrency()->getBaseCurrencyCode(),
-                        'totalPrice' => (string)number_format($quote->getBaseGrandTotal(), 2),
+                        'totalPrice' => sprintf('%.2F', $quote->getBaseGrandTotal()),
                         'totalPriceStatus' => $quote->isVirtual() || $shippingAddress && $shippingAddress->getShippingMethod() ? 'FINAL' : 'ESTIMATED',
                     ]
                 ]
