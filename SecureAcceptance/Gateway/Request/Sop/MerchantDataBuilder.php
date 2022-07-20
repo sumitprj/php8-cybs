@@ -66,7 +66,7 @@ class MerchantDataBuilder implements \Magento\Payment\Gateway\Request\BuilderInt
     {
         return str_replace('_', '-', strtolower(
             $this->config->getLocale($storeId)
-                ?: $this->localeResolver->getLocale()
+                ?: $this->localeResolver->getLocale() ?? ''
         ));
     }
 }
