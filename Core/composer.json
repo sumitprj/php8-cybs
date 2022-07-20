@@ -6,7 +6,7 @@
         "magento/module-payment": "100.2.*|100.3.*|100.4.*"
     },
     "type": "magento2-module",
-    "version": "3.5.2",
+    "version": "3.5.3",
     "license": [
 	   "proprietary"
     ],

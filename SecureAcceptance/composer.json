@@ -9,7 +9,7 @@
         "lcobucci/jwt": "~3.4.2|~4.0.4|~4.1.5"
     },
     "type": "magento2-module",
-    "version": "3.5.3",
+    "version": "3.5.4",
     "license": [
         "proprietary"
     ],
