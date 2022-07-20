@@ -95,6 +95,6 @@ class Allregion implements \Magento\Framework\Option\ArrayInterface
      */
     public function sortRegionCountries($a, $b)
     {
-        return strcmp($this->_countries[$a], $this->_countries[$b]);
+        return strcmp($this->_countries[$a] ?? '', $this->_countries[$b] ?? '');
     }
 }
