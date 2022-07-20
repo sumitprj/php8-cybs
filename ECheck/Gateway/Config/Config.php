@@ -142,7 +142,7 @@ class Config extends AbstractGatewayConfig
 
     public function isTestMode($storeId = null)
     {
-        $currentMethod = $this->methodCode;
+        $currentMethod = $this->method;
         $this->setMethodCode('chcybersource');
         $testMode = parent::isTestMode($storeId);
         $this->setMethodCode($currentMethod);
