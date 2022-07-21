@@ -104,7 +104,7 @@ class Config extends AbstractGatewayConfig
 
     public function getEnvironment()
     {
-        $isTestMode = (bool) $this->getValue(self::KEY_TEST_MODE);
+        $isTestMode =  $this->isTestMode();
 
         if ($isTestMode) {
             return 'sandbox';
