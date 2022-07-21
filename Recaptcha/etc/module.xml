@@ -3,7 +3,6 @@
     <module name="CyberSource_Recaptcha" setup_version="3.1.6">
         <sequence>
             <module name="CyberSource_Core"/>
-            <module name="MSP_ReCaptcha" />
         </sequence>
     </module>
 </config>

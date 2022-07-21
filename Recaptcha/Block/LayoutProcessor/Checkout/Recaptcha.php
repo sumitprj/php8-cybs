@@ -24,7 +24,7 @@ class Recaptcha implements \Magento\Checkout\Block\Checkout\LayoutProcessorInter
         ['payment']['children']
         ['payments-list']['children']
         ['cybersource-recaptcha']['children']
-        ['msp_recaptcha']['settings'] = $this->layoutSettings->getCaptchaSettings();
+        ['cybersource_recaptcha']['settings'] = $this->layoutSettings->getCaptchaSettings();
 
         return $jsLayout;
     }

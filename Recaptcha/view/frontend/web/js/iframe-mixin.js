@@ -8,7 +8,7 @@ define([
         return Component.extend(
             {
                 placeOrder: function () {
-                    var isEnabled = window.checkoutConfig.msp_recaptcha.enabled.cybersource,
+                    var isEnabled = window.checkoutConfig.cybersource_recaptcha.enabled.cybersource,
                         $form = $('#co-payment-form'),
                         _super = this._super.bind(this)
                     ;

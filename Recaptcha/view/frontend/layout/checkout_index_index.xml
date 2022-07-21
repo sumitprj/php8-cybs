@@ -17,7 +17,7 @@
                                                         <item name="payments-list" xsi:type="array">
                                                             <item name="children" xsi:type="array">
                                                                 <item name="cybersource-recaptcha" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">uiComponent</item>
+                                                                    <item name="component" xsi:type="string">CyberSource_Recaptcha/js/recaptcha</item>
                                                                     <item name="displayArea" xsi:type="string">cybersource-recaptcha</item>
                                                                     <item name="dataScope" xsi:type="string">cybersource-recaptcha</item>
                                                                     <item name="provider" xsi:type="string">checkoutProvider</item>
@@ -25,11 +25,11 @@
                                                                         <item name="template" xsi:type="string">Magento_Checkout/payment/before-place-order</item>
                                                                     </item>
                                                                     <item name="children" xsi:type="array">
-                                                                        <item name="msp_recaptcha" xsi:type="array">
+                                                                        <item name="cybersource_recaptcha" xsi:type="array">
                                                                             <item name="component" xsi:type="string">CyberSource_Recaptcha/js/recaptcha</item>
                                                                             <item name="displayArea" xsi:type="string">additional-payment-fields</item>
                                                                             <item name="configSource" xsi:type="string">checkoutConfig</item>
-                                                                            <item name="reCaptchaId" xsi:type="string">msp-recaptcha-checkout-cybersource-form</item>
+                                                                            <item name="reCaptchaId" xsi:type="string">cybersource-recaptcha-checkout-cybersource-form</item>
                                                                             <item name="zone" xsi:type="string">cybersource</item>
                                                                         </item>
                                                                     </item>

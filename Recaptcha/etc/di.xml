@@ -2,4 +2,25 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
+ <!-- Default HTTP response provider -->
+    <preference for="CyberSource\ReCaptcha\Model\Provider\ResponseProviderInterface"
+                type="CyberSource\ReCaptcha\Model\Provider\Response\DefaultResponseProvider"/>
+
+    <preference for="CyberSource\ReCaptcha\Api\ValidateInterface" 
+                type="CyberSource\ReCaptcha\Model\Validate"/>
+
+    <preference for="CyberSource\ReCaptcha\Model\IsCheckRequiredInterface" 
+                type="CyberSource\ReCaptcha\Model\IsCheckRequired"/>
+
+
+    <preference for="CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface"
+                type="CyberSource\ReCaptcha\Model\FailureResponseProvider"/>
+
+     <type name="CyberSource\Recaptcha\Observer\OrderPlacebefore">
+        <arguments>
+            <argument name="isCheckRequired" xsi:type="object">CyberSource\Recaptcha\Observer\IsCheckRequired</argument>
+            <argument name="validate" xsi:type="object">CyberSource\Recaptcha\Model\Validate</argument>
+        </arguments>
+    </type>   
+
 </config>

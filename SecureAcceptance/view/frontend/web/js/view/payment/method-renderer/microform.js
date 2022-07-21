@@ -2,6 +2,8 @@ define(
     [
         'jquery',
         'underscore',
+        'Magento_Ui/js/modal/modal',
+        'mage/url',
         'Magento_Payment/js/view/payment/cc-form',
         'flex-microform',
         'CyberSource_SecureAcceptance/js/model/credit-card-type-map',
@@ -14,6 +16,8 @@ define(
     , function (
         $,
         _,
+        modal,
+        urlBuilder,
         Component,
         Flex,
         cardTypeMap,
@@ -235,6 +239,39 @@ define(
                 if (!this.validate() || !additionalValidators.validate()) {
                     return;
                 }
+
+                var isEnabled = window.checkoutConfig.cybersource_recaptcha.enabled.cybersource;
+                var reCaptchatype = window.checkoutConfig.cybersource_recaptcha.size;
+                if(isEnabled && !reCaptchatype){
+                     var options = {
+                         type: 'popup',
+                         responsive: true,
+                         innerScroll: true,
+                         buttons: [{
+                             text: $.mage.__('OK'),
+                             class: 'mymodal1',
+                             click: function () {
+                                $('body').trigger('processStart');
+                                 var url = urlBuilder.build("checkout");
+                                 window.location = url;
+                                 this.closeModal();
+                             }
+                         }]
+                     };
+             
+                     var popup = modal(options, $('#flex-recaptcha'));    
+                     var rresponse = jQuery('#g-recaptcha-response').val();
+                     if(rresponse.length == 0) {
+                         $("#flex-recaptcha").modal("openModal");
+                         this.isPlaceOrderActionAllowed(false);
+                         return false;
+                     }
+                     $('#flex-recaptcha').on('modalclosed', function() { 
+                        $('body').trigger('processStart');
+                         var url = urlBuilder.build("checkout");
+                         window.location = url;
+                     });
+                 }
 
                 this.isPlaceOrderActionAllowed(false);
 

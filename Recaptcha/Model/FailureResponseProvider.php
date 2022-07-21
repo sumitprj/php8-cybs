@@ -2,7 +2,7 @@
 
 namespace CyberSource\Recaptcha\Model;
 
-class FailureResponseProvider implements \MSP\ReCaptcha\Model\Provider\FailureProviderInterface
+class FailureResponseProvider implements \CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface
 {
 
     /**
