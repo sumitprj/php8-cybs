@@ -49,7 +49,7 @@ class ItemsBuilder implements \Magento\Payment\Gateway\Request\BuilderInterface
         $paymentDO = $this->subjectReader->readPayment($buildSubject);
         $payment = $paymentDO->getPayment();
 
-        $result = $this->{'get' . ucfirst($this->objectName) . 'Items'}($payment);
+        $result = $this->{'get' . ucfirst($this->objectName ?? '') . 'Items'}($payment);
 
         return ['item' => $result];
     }

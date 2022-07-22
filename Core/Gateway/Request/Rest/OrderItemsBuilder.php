@@ -48,7 +48,7 @@ class OrderItemsBuilder implements \Magento\Payment\Gateway\Request\BuilderInter
         $paymentDO = $this->subjectReader->readPayment($buildSubject);
         $payment = $paymentDO->getPayment();
 
-        $result = $this->{'get' . ucfirst($this->objectName) . 'Items'}($payment);
+        $result = $this->{'get' . ucfirst($this->objectName ?? '') . 'Items'}($payment);
 
         return $result;
     }
