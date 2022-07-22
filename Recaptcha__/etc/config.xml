@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <chcybersource>
+                <recaptcha_enabled>0</recaptcha_enabled>
+                <recaptcha_secret_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <recaptcha_type>invisible</recaptcha_type>
+                <recaptcha_badge_position>bottomright</recaptcha_badge_position>
+                <recaptcha_language></recaptcha_language>
+            </chcybersource>
+        </payment>
+    </default>
+</config>
