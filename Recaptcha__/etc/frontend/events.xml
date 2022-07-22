@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-    <event name="controller_action_predispatch_cybersource_secureacceptance_tokenrequest">
-        <observer name="cybersource_captcha" instance="CyberSourceRecaptchaObserverRecaptcha"/>
-    </event>
-    <event name="controller_action_predispatch_cybersource_index_loadsilentdata">
-        <observer name="cybersource_sa_captcha" instance="CyberSourceRecaptchaObserverRecaptcha"/>
-    </event>
-</config>
