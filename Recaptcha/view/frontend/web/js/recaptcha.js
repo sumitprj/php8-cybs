@@ -28,7 +28,6 @@ define(
                   * @private
                   */
                 _loadApi: function () {
-                    console.log("-----pub recpatctha cybs _loadAPI------");
                     var element, scriptTag;
     
                     if (this._isApiRegistered !== undefined) {
@@ -171,9 +170,6 @@ define(
                 return this.reCaptchaId;
             },
                 updateRegistry: function(id, widgetId, field) {
-                    console.log('id ----->' + id);
-                    console.log('widgetId ----->' + widgetId);
-                    console.log('field ----->' + field);
                     registry.ids.push(id);
                     registry.captchaList.push(widgetId);
                     registry.tokenFields.push(field);

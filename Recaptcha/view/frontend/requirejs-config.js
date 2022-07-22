@@ -16,10 +16,6 @@ var config = {
             'Magento_Ui/js/view/messages': {
                 'CyberSource_ReCaptcha/js/ui-messages-mixin': true
             }
-            /*,
-            'CyberSource_SecureAcceptance/js/view/payment/method-renderer/microform': {
-                'CyberSource_ReCaptcha/js/action/microform-mixin': true
-            }*/
         }
     }
 };

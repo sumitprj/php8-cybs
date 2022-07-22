@@ -16,7 +16,7 @@
     <preference for="CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface"
                 type="CyberSource\ReCaptcha\Model\FailureResponseProvider"/>
 
-     <type name="CyberSource\Recaptcha\Observer\OrderPlacebefore">
+     <type name="CyberSource\Recaptcha\Observer\OrderPlaceFlexafter">
         <arguments>
             <argument name="isCheckRequired" xsi:type="object">CyberSource\Recaptcha\Observer\IsCheckRequired</argument>
             <argument name="validate" xsi:type="object">CyberSource\Recaptcha\Model\Validate</argument>

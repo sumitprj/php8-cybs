@@ -15,7 +15,8 @@
     <preference for="CyberSource\ReCaptcha\Model\IsCheckRequiredInterface"
                 type="CyberSource\ReCaptcha\Model\IsCheckRequired"/>
         
-    <preference for="CyberSource\ReCaptcha\Api\ValidateInterface" type="CyberSource\ReCaptcha\Model\Validate"/>
+    <preference for="CyberSource\ReCaptcha\Api\ValidateInterface" 
+                type="CyberSource\ReCaptcha\Model\Validate"/>
 
     <virtualType name="CyberSourceRecaptchaObserverRecaptcha" type="CyberSource\ReCaptcha\Observer\ReCaptchaObserver">
         <arguments>
@@ -25,10 +26,9 @@
         </arguments>
     </virtualType>
 
-    <virtualType name="CyberSourceSaRecaptchaObserverRecaptcha" type="CyberSource\ReCaptcha\Observer\ReCaptchaObserver">
+    <virtualType name="CyberSourceSaRecaptchaObserverRecaptcha" type="CyberSource\ReCaptcha\Observer\ReCaptchaSaObserver">
         <arguments>
             <argument name="isCheckRequired" xsi:type="object">CyberSource\Recaptcha\Observer\IsCheckRequired</argument>
-            <argument name="failureProvider" xsi:type="object">CyberSource\Recaptcha\Model\FailureResponseProvider</argument>
             <argument name="validate" xsi:type="object">CyberSource\Recaptcha\Model\Validate</argument>
         </arguments>
     </virtualType>

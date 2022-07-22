@@ -4,6 +4,6 @@
         <observer name="cybersource_captcha" instance="CyberSourceRecaptchaObserverRecaptcha"/>
     </event>
     <event name="controller_action_predispatch_cybersource_index_loadsilentdata">
-        <observer name="cybersource_sa_captcha" instance="CyberSourceSaRecaptchaObserverRecaptcha"/>
+        <observer name="cybersource_sa_captcha" instance="CyberSourceRecaptchaObserverRecaptcha"/>
     </event>
 </config>
