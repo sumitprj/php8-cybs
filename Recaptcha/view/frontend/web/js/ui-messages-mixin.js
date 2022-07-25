@@ -1,7 +1,7 @@
 
 'use strict';
 
-define(['CyberSource_ReCaptcha/js/registry'], function (registry) {
+define(['CyberSource_Recaptcha/js/registry'], function (registry) {
 
 return function (originalComponent) {
     return originalComponent.extend({

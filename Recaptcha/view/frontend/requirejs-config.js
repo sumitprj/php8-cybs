@@ -14,7 +14,7 @@ var config = {
                 'CyberSource_Recaptcha/js/iframe-mixin': true
             },
             'Magento_Ui/js/view/messages': {
-                'CyberSource_ReCaptcha/js/ui-messages-mixin': true
+                'CyberSource_Recaptcha/js/ui-messages-mixin': true
             }
         }
     }

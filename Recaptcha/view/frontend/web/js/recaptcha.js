@@ -4,7 +4,7 @@ define(
         'uiComponent',
         'jquery',
         'underscore',
-        'CyberSource_ReCaptcha/js/registry',
+        'CyberSource_Recaptcha/js/registry',
         'mage/translate'
     ],
     function (ko,Component, $, _, registry, $t) {
@@ -13,7 +13,7 @@ define(
         return Component.extend(
             {
                 defaults: {
-                   template: 'CyberSource_ReCaptcha/reCaptcha',
+                   template: 'CyberSource_Recaptcha/reCaptcha',
                     reCaptchaId: 'cybersource-recaptcha'
                 },
                 _isApiRegistered: undefined,

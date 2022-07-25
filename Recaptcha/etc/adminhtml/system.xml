@@ -44,7 +44,7 @@
                         <field id="recaptcha_badge_position" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                             <label>Badge position</label>
                             <config_path>payment/chcybersource/recaptcha_badge_position</config_path>
-                            <source_model>CyberSource\ReCaptcha\Model\Config\Source\Position</source_model>
+                            <source_model>CyberSource\Recaptcha\Model\Config\Source\Position</source_model>
                             <depends>
                                 <field id="enabled">1</field>
                                 <field id="recaptcha_type">invisible</field>
