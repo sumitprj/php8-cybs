@@ -1,6 +1,6 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Model\Config\Source;
+namespace CyberSource\Recaptcha\Model\Config\Source;
 
 class Position implements \Magento\Framework\Option\ArrayInterface
 {

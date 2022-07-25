@@ -6,10 +6,10 @@ use Magento\Framework\App\Action\Action;
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
-use CyberSource\ReCaptcha\Api\ValidateInterface;
-use CyberSource\ReCaptcha\Model\IsCheckRequiredInterface;
-use CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface;
-use CyberSource\ReCaptcha\Model\Provider\ResponseProviderInterface;
+use CyberSource\Recaptcha\Api\ValidateInterface;
+use CyberSource\Recaptcha\Model\IsCheckRequiredInterface;
+use CyberSource\Recaptcha\Model\Provider\FailureProviderInterface;
+use CyberSource\Recaptcha\Model\Provider\ResponseProviderInterface;
 
 class ReCaptchaObserver implements ObserverInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Api;
+namespace CyberSource\Recaptcha\Api;
 
 interface ValidateInterface
 {

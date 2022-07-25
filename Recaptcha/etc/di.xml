@@ -3,18 +3,18 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
  <!-- Default HTTP response provider -->
-    <preference for="CyberSource\ReCaptcha\Model\Provider\ResponseProviderInterface"
-                type="CyberSource\ReCaptcha\Model\Provider\Response\DefaultResponseProvider"/>
+    <preference for="CyberSource\Recaptcha\Model\Provider\ResponseProviderInterface"
+                type="CyberSource\Recaptcha\Model\Provider\Response\DefaultResponseProvider"/>
 
-    <preference for="CyberSource\ReCaptcha\Api\ValidateInterface" 
-                type="CyberSource\ReCaptcha\Model\Validate"/>
+    <preference for="CyberSource\Recaptcha\Api\ValidateInterface" 
+                type="CyberSource\Recaptcha\Model\Validate"/>
 
-    <preference for="CyberSource\ReCaptcha\Model\IsCheckRequiredInterface" 
-                type="CyberSource\ReCaptcha\Model\IsCheckRequired"/>
+    <preference for="CyberSource\Recaptcha\Model\IsCheckRequiredInterface" 
+                type="CyberSource\Recaptcha\Model\IsCheckRequired"/>
 
 
-    <preference for="CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface"
-                type="CyberSource\ReCaptcha\Model\FailureResponseProvider"/>
+    <preference for="CyberSource\Recaptcha\Model\Provider\FailureProviderInterface"
+                type="CyberSource\Recaptcha\Model\FailureResponseProvider"/>
 
      <type name="CyberSource\Recaptcha\Observer\OrderPlaceFlexafter">
         <arguments>

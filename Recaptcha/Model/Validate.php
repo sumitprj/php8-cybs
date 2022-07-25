@@ -3,7 +3,7 @@
 namespace CyberSource\Recaptcha\Model;
 
 
-class Validate implements \CyberSource\ReCaptcha\Api\ValidateInterface
+class Validate implements \CyberSource\Recaptcha\Api\ValidateInterface
 {
 
     /**

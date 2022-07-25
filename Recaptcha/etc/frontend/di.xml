@@ -9,16 +9,16 @@
     </type>
 
     <!-- Default HTTP response provider -->
-    <preference for="CyberSource\ReCaptcha\Model\Provider\ResponseProviderInterface"
-                type="CyberSource\ReCaptcha\Model\Provider\Response\DefaultResponseProvider"/>
+    <preference for="CyberSource\Recaptcha\Model\Provider\ResponseProviderInterface"
+                type="CyberSource\Recaptcha\Model\Provider\Response\DefaultResponseProvider"/>
 
-    <preference for="CyberSource\ReCaptcha\Model\IsCheckRequiredInterface"
-                type="CyberSource\ReCaptcha\Model\IsCheckRequired"/>
+    <preference for="CyberSource\Recaptcha\Model\IsCheckRequiredInterface"
+                type="CyberSource\Recaptcha\Model\IsCheckRequired"/>
         
-    <preference for="CyberSource\ReCaptcha\Api\ValidateInterface" 
-                type="CyberSource\ReCaptcha\Model\Validate"/>
+    <preference for="CyberSource\Recaptcha\Api\ValidateInterface" 
+                type="CyberSource\Recaptcha\Model\Validate"/>
 
-    <virtualType name="CyberSourceRecaptchaObserverRecaptcha" type="CyberSource\ReCaptcha\Observer\ReCaptchaObserver">
+    <virtualType name="CyberSourceRecaptchaObserverRecaptcha" type="CyberSource\Recaptcha\Observer\ReCaptchaObserver">
         <arguments>
             <argument name="isCheckRequired" xsi:type="object">CyberSource\Recaptcha\Observer\IsCheckRequired</argument>
             <argument name="failureProvider" xsi:type="object">CyberSource\Recaptcha\Model\FailureResponseProvider</argument>
@@ -26,14 +26,14 @@
         </arguments>
     </virtualType>
 
-    <virtualType name="CyberSourceSaRecaptchaObserverRecaptcha" type="CyberSource\ReCaptcha\Observer\ReCaptchaSaObserver">
+    <virtualType name="CyberSourceSaRecaptchaObserverRecaptcha" type="CyberSource\Recaptcha\Observer\ReCaptchaSaObserver">
         <arguments>
             <argument name="isCheckRequired" xsi:type="object">CyberSource\Recaptcha\Observer\IsCheckRequired</argument>
             <argument name="validate" xsi:type="object">CyberSource\Recaptcha\Model\Validate</argument>
         </arguments>
     </virtualType>
 
-    <type name="CyberSource\ReCaptcha\Model\LayoutSettings">
+    <type name="CyberSource\Recaptcha\Model\LayoutSettings">
         <plugin name="cybersource-recaptcha-layout-processor-plugin" type="CyberSource\Recaptcha\Plugin\Model\LayoutSettingsPlugin"/>
     </type>
 

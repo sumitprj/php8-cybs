@@ -1,6 +1,6 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Model\Provider\Failure;
+namespace CyberSource\Recaptcha\Model\Provider\Failure;
 
 interface RedirectUrlProviderInterface
 {

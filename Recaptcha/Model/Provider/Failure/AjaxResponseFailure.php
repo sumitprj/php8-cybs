@@ -1,13 +1,13 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Model\Provider\Failure;
+namespace CyberSource\Recaptcha\Model\Provider\Failure;
 
 use Magento\Framework\App\ActionFlag;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\Json\EncoderInterface;
-use CyberSource\ReCaptcha\Model\Config;
-use CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface;
+use CyberSource\Recaptcha\Model\Config;
+use CyberSource\Recaptcha\Model\Provider\FailureProviderInterface;
 
 class AjaxResponseFailure implements FailureProviderInterface
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Model\Provider\Failure;
+namespace CyberSource\Recaptcha\Model\Provider\Failure;
 
 use Magento\Framework\App\ActionFlag;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Message\ManagerInterface as MessageManagerInterface;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\UrlInterface;
-use CyberSource\ReCaptcha\Model\Config;
-use CyberSource\ReCaptcha\Model\Provider\FailureProviderInterface;
+use CyberSource\Recaptcha\Model\Config;
+use CyberSource\Recaptcha\Model\Provider\FailureProviderInterface;
 
 class ObserverRedirectFailure implements FailureProviderInterface
 {
@@ -69,7 +69,7 @@ class ObserverRedirectFailure implements FailureProviderInterface
     }
 
     /**
-     * Handle reCaptcha failure
+     * Handle recaptcha failure
      * @param ResponseInterface $response
      * @return void
      */

@@ -7,7 +7,7 @@ use Magento\Framework\App\ResponseInterface;
 interface FailureProviderInterface
 {
     /**
-     * Handle reCaptcha failure
+     * Handle recaptcha failure
      * @param ResponseInterface $response
      * @return void
      */

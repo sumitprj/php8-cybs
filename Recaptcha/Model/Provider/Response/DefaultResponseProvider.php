@@ -1,11 +1,11 @@
 <?php
 
 
-namespace CyberSource\ReCaptcha\Model\Provider\Response;
+namespace CyberSource\Recaptcha\Model\Provider\Response;
 
 use Magento\Framework\App\RequestInterface;
-use CyberSource\ReCaptcha\Api\ValidateInterface;
-use CyberSource\ReCaptcha\Model\Provider\ResponseProviderInterface;
+use CyberSource\Recaptcha\Api\ValidateInterface;
+use CyberSource\Recaptcha\Model\Provider\ResponseProviderInterface;
 
 class DefaultResponseProvider implements ResponseProviderInterface
 {
@@ -24,7 +24,7 @@ class DefaultResponseProvider implements ResponseProviderInterface
     }
 
     /**
-     * Handle reCaptcha failure
+     * Handle recaptcha failure
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */

@@ -18,7 +18,7 @@ class LayoutSettingsPlugin
     }
 
     public function afterGetCaptchaSettings(
-        \CyberSource\ReCaptcha\Model\LayoutSettings $subject,
+        \CyberSource\Recaptcha\Model\LayoutSettings $subject,
         array $result
     ) {
         $result['enabled']['cybersource'] = $this->config->isEnabled();

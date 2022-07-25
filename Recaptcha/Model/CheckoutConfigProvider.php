@@ -8,7 +8,7 @@ class CheckoutConfigProvider implements ConfigProviderInterface
     private $layoutSettings;
 
     public function __construct(
-        \CyberSource\ReCaptcha\Model\LayoutSettings $layoutSettings
+        \CyberSource\Recaptcha\Model\LayoutSettings $layoutSettings
     ) {
         $this->layoutSettings = $layoutSettings;
     }

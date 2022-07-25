@@ -5,7 +5,7 @@
 
 namespace CyberSource\Recaptcha\Observer;
 
-class IsCheckRequired implements \CyberSource\ReCaptcha\Model\IsCheckRequiredInterface
+class IsCheckRequired implements \CyberSource\Recaptcha\Model\IsCheckRequiredInterface
 {
 
     /**

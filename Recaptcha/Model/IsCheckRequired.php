@@ -1,6 +1,6 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Model;
+namespace CyberSource\Recaptcha\Model;
 
 use Magento\Framework\App\Area;
 use Magento\Framework\App\Config\ScopeConfigInterface;

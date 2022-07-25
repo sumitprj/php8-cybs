@@ -1,11 +1,11 @@
 <?php
 
-namespace CyberSource\ReCaptcha\Model\Provider;
+namespace CyberSource\Recaptcha\Model\Provider;
 
 interface ResponseProviderInterface
 {
     /**
-     * Handle reCaptcha failure
+     * Handle recaptcha failure
      * @return string
      */
     public function execute();
