@@ -9,6 +9,7 @@ use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 use CyberSource\Recaptcha\Api\ValidateInterface;
 use CyberSource\Recaptcha\Model\IsCheckRequiredInterface;
 use CyberSource\Recaptcha\Model\Provider\ResponseProviderInterface;
+use CyberSource\SecureAcceptance\Gateway\Config\Config as SaConfig;
 
 class ReCaptchaSaObserver implements ObserverInterface
 {
@@ -34,6 +35,11 @@ class ReCaptchaSaObserver implements ObserverInterface
     private $isCheckRequired;
 
     /**
+     * @var SaConfig
+     */
+    private $saConfig;
+
+    /**
      * @param ResponseProviderInterface $responseProvider
      * @param ValidateInterface $validate
      * @param RemoteAddress $remoteAddress
@@ -43,12 +49,14 @@ class ReCaptchaSaObserver implements ObserverInterface
         ResponseProviderInterface $responseProvider,
         ValidateInterface $validate,
         RemoteAddress $remoteAddress,
+		SaConfig $saConfig,
         IsCheckRequiredInterface $isCheckRequired
     ) {
         $this->responseProvider = $responseProvider;
         $this->validate = $validate;
         $this->remoteAddress = $remoteAddress;
         $this->isCheckRequired = $isCheckRequired;
+		$this->saConfig = $saConfig;
     }
 
     /**
@@ -57,7 +65,7 @@ class ReCaptchaSaObserver implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        if ($this->isCheckRequired->execute() && $checkoutFlowTypeConfig == "flex") {
+        if ($this->isCheckRequired->execute() && $this->saConfig->getIsLegacyMode()) {
             $reCaptchaResponse = $this->responseProvider->execute();
             $remoteIp = $this->remoteAddress->getRemoteAddress();
             $this->validate->validate($reCaptchaResponse, $remoteIp); 
