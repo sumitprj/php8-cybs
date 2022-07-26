@@ -64,7 +64,8 @@ define([
                 return;
             }
             var isEnabled = window.checkoutConfig.cybersource_recaptcha.enabled.cybersource;
-                if(isEnabled){
+            var recaptcha_invisible = window.checkoutConfig.payment.chcybersource.recaptcha_invisible;
+                if(isEnabled && recaptcha_invisible != "invisible"){
                      var options = {
                          type: 'popup',
                          responsive: true,

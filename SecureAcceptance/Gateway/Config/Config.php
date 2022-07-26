@@ -56,6 +56,7 @@ class Config extends AbstractGatewayConfig
     const KEY_ENFORCE_SCA_SOAP_ON_SAVE = 'enforce_sca_soap_on_save';
     const KEY_ENFORCE_SCA_SA_WITHOUT_SAVE ='enforce_sca_sa_without_save';
     const KEY_ENFORCE_SCA_SA_ON_SAVE ='enforce_sca_sa_on_save';
+    const KEY_RECAPTHA_INVISIBLE = 'recaptcha_type';
     /**
      * @var \Magento\Framework\App\State
      */
@@ -339,5 +340,10 @@ class Config extends AbstractGatewayConfig
     public function isScaEnforcedWithoutCardSaveSa($storeId = null)
     {
         return $this->getValue(self::KEY_ENFORCE_SCA_SA_WITHOUT_SAVE, $storeId) == 1;
+    }
+
+    public function getRecapthaInvisible($storeId = null)
+    {
+        return $this->getValue(self::KEY_RECAPTHA_INVISIBLE, $storeId);
     }
 }
