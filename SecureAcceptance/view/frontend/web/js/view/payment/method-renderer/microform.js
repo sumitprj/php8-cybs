@@ -263,6 +263,7 @@ define(
                      var rresponse = jQuery('#g-recaptcha-response').val();
                      if(rresponse.length == 0) {
                          $("#flex-recaptcha").modal("openModal");
+                         $('.action-close').css('display', 'none');
                          this.isPlaceOrderActionAllowed(false);
                          return false;
                      }
