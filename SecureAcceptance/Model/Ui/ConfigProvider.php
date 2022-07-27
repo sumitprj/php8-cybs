@@ -59,6 +59,7 @@ class ConfigProvider implements ConfigProviderInterface
                     "iframe_post" => !$this->config->getIsLegacyMode(),
                     "sa_type" => $this->config->getSaType(),
                     "recaptcha_invisible" => $this->config->getRecapthaInvisible(),
+                    "recaptcha_lang" => $this->config->getRecapthaLang(),
                     'pass_expiration_date' => $this->config->getTokenPassExpirationDate(),
                 ],
                 self::CC_VAULT_CODE => [

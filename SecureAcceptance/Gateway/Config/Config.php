@@ -57,6 +57,7 @@ class Config extends AbstractGatewayConfig
     const KEY_ENFORCE_SCA_SA_WITHOUT_SAVE ='enforce_sca_sa_without_save';
     const KEY_ENFORCE_SCA_SA_ON_SAVE ='enforce_sca_sa_on_save';
     const KEY_RECAPTHA_INVISIBLE = 'recaptcha_type';
+    const KEY_RECAPTHA_LANGUAGE = 'recaptcha_language';
     /**
      * @var \Magento\Framework\App\State
      */
@@ -346,4 +347,10 @@ class Config extends AbstractGatewayConfig
     {
         return $this->getValue(self::KEY_RECAPTHA_INVISIBLE, $storeId);
     }
+
+    public function getRecapthaLang($storeId = null)
+    {
+        return $this->getValue(self::KEY_RECAPTHA_LANGUAGE, $storeId);
+    }
+
 }

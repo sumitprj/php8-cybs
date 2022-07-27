@@ -47,11 +47,11 @@ define(
     
                     element   = document.createElement('script');
                     scriptTag = document.getElementsByTagName('script')[0];
-    
+                    var recaptchaLang = window.checkoutConfig.payment.chcybersource.recaptcha_lang;
                     element.async = true;
                     element.src = 'https://www.google.com/recaptcha/api.js'
-                        + '?onload=globalOnRecaptchaOnLoadCallback&render=explicit';
-                       // + (this.settings.lang ? '&hl=' + this.settings.lang : '');
+                        + '?onload=globalOnRecaptchaOnLoadCallback&render=explicit'
+                        + (recaptchaLang ? '&hl=' + recaptchaLang : '');
     
                     scriptTag.parentNode.insertBefore(element, scriptTag);
     
