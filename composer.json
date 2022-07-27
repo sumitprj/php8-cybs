@@ -14,7 +14,7 @@
         "cybersource/module-echeck": "3.1.9",
         "cybersource/module-klarna": "3.3.3",
         "cybersource/module-paypal": "4.0.0",
-        "cybersource/module-secure-acceptance": "3.5.4",
+        "cybersource/module-secure-acceptance": "3.5.5",
         "cybersource/module-tax": "3.2.6",
         "cybersource/module-visa-checkout": "3.1.8",
         "cybersource/module-googlepay": "3.2.9",
