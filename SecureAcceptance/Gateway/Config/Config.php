@@ -345,11 +345,13 @@ class Config extends AbstractGatewayConfig
 
     public function getRecapthaInvisible($storeId = null)
     {
+        $storeId = $storeId ?? $this->getCurrentStoreId();
         return $this->getValue(self::KEY_RECAPTHA_INVISIBLE, $storeId);
     }
 
     public function getRecapthaLang($storeId = null)
     {
+        $storeId = $storeId ?? $this->getCurrentStoreId();
         return $this->getValue(self::KEY_RECAPTHA_LANGUAGE, $storeId);
     }
 
